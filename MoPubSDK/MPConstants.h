@@ -6,8 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#define MP_DEBUG_MODE               1
+#ifdef DEBUG
+#define MP_DEBUG_MODE               MPLogLevelAll
+#else
+#define MP_DEBUG_MODE               MPLogLevelOff
+#endif
 
 #define DEFAULT_PUB_ID              @"agltb3B1Yi1pbmNyDAsSBFNpdGUYkaoMDA"
 #define MP_SERVER_VERSION           @"8"
@@ -28,4 +31,4 @@ extern CGSize const MOPUB_WIDE_SKYSCRAPER_SIZE;
 #define REWARDED_VIDEO_TIMEOUT_INTERVAL     30
 
 // Feature Flags
-#define SESSION_TRACKING_ENABLED            1
+#define SESSION_TRACKING_ENABLED            0
